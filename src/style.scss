@@ -1,0 +1,229 @@
+$top_bgc:rgb(62,110,127);
+$top_color: #ffffff;
+$color1: #feafaa;
+$color2: #fed5aa;
+$color3: #c5feaa;
+$color4: #aafefa;
+$color5: #e7aafe;
+
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+html,body{
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
+  position:relative;
+  // border: solid 1px red;
+}
+
+body{
+  position: relative;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  border-top: solid 30px #0970dc;
+  border-bottom: solid 30px #0970dc;
+  overflow: hidden;
+}
+.Top{
+  position: absolute;
+  height: 300px;
+  width:300px;
+  background-color: $top_bgc;
+  color:$top_color;
+  border-radius: 30px 30px 225px 30px;
+  margin-top: -100px;
+  margin-left: -75px;
+  font-family: 'Anton', sans-serif;
+  h3{
+  font-family: Algerian;
+  color: yellow;
+  margin-left: 83px;
+  margin-top: 100px;
+  font-size: 42px;
+  width: 100px;
+  line-height: 60px;
+    span{
+      font-family: MV Boli;
+      color: white;
+      font-size: 35px;
+    }
+  }
+}
+
+.screen {
+  width: 100%;
+  height: 100%;
+  left: 100%;
+}
+.namecard {
+  position: fixed;
+  width: 400px;
+  height: 250px;
+  left: 40%;
+  top: 40%;
+  padding: 20px;
+  overflow: hidden;
+  background-color: #fff714;
+  color: #424242;
+  border: solid 1px rgba(0,0,0,0.15);
+  box-shadow: 20px 25px 15px -15px rgba(0,0,0,0.25);
+  border-radius: 10px;
+  font-family: 微軟正黑體;
+  transition: 0.5s;
+  hr {
+  border-color: #fff;
+  margin-top: -15px;
+  margin-bottom: 20px;
+  h2 {
+  font-size: 20px;
+    }
+  span {
+  font-size: 17px;
+  font-weight: 500; 
+    }
+  h5 {
+  font-size: 16px;
+  font-weight: 400;
+    }
+  }
+}
+.namecard:hover{
+  transform: translate(-50px,-50px);
+  box-shadow: -20px -25px 15px -15px rgba(0,0,0,0.5);
+}
+
+.allbub {
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+  z-index: -1;
+  position: absolute;
+  left: 10;
+  top:0;
+    @keyframes falling{
+      0%,100%{
+        opacity: 0;
+      }
+      70%{
+        opacity: 1;
+      }
+      0%{
+        transform: translate(100%,0px);
+      }
+      100%{
+        transform: translate(0px,100%);
+      }
+   }
+   [class*='bub'] {
+   background-color: #fff;
+   width: 30px;
+   height: 30px;
+   border-radius: 15px;
+   animation: falling 2s infinite;
+   } 
+ }
+ @for $i from 1 through 20{
+   .bub#{$i}  {
+     $posX: random()*100%;
+       $posY: random()*-100%+90%;
+       position: absolute;
+       left: $posX;
+       top: $posY;
+       animation-delay: $i*-0.1s;
+    }
+}
+@keyframes back{
+  0%{
+    background-color: $color1;
+  }
+  25%{
+    background-color: $color2;
+  }
+  50%{
+    background-color: $color3;
+  }
+  75%{
+    background-color: $color4;
+  }
+  100%{
+    background-color: $color5;
+  }
+}
+.allbub{
+  animation: back 8s infinite;
+}
+@keyframes title {
+  0% {
+    margin-top: -200px;
+    margin-left: -300px;
+  }
+  50% {
+    margin-top: -75px;
+    margin-left: -50px;
+  }
+  100% {
+    margin-top: -100px;
+    margin-left: -75px;
+  }
+}
+
+.Top{
+          animation-name: title;
+          animation-direction: 1.5s;
+}
+.circle{
+  width: 100px; height: 100px;
+  border-radius: 100%;
+  position: absolute;
+  right: 100px;
+}
+.dec_1,
+.dec_2,
+.dec_3{
+  position: absolute;
+  top: 40px;
+  right: 40%;
+  height: 50px;
+  width: 50px;
+  border-radius: 15px;
+  border: 7px solid #0023b3;
+  transform: rotate(45deg);
+}
+.dec_1{
+  right: 29%;  
+  
+}
+.dec_2{
+  top: 30px;
+  right: 15%;
+  height: 65px;
+  width: 65px;
+  border: 7px solid #016bd5;
+  z-index: 10;
+}
+.dec_3{
+  right: 4%;
+  
+}
+.trangle{
+  position: absolute;
+}
+.trangle1{
+  right:390px;
+  top:-50px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 60px 30px 30px 0 ;
+  border-color: transparent transparent #ff5900 transparent;
+}
+
+.trangle3{
+  right:373px;
+  top:-50px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 60px 0 30px 30px ;
+  border-color: transparent transparent #fa7f3d transparent;
+}
